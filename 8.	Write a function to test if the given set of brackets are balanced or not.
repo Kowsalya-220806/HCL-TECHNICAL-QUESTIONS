@@ -1,0 +1,36 @@
+#include <iostream>
+#include<string>
+using namespace std;
+int main()
+{
+    string s,r;
+    cin>>s;
+    for(char ch:s){
+        if (ch=='('||ch=='{'||ch=='['){
+            r+=ch;
+        }
+    
+        if(ch==')'||ch=='}'||ch==']'){
+            if(r.empty()){
+                cout<<"The bracket sequence is NOT balanced.\n";
+                return 0;
+            }
+            if((ch==')'&&r.back()=='(')||(ch==']'&&r.back()=='[')||(ch=='}'&&r.back()=='{')){
+                r.pop_back();
+            }
+            else{
+                cout<<"The bracket sequence is NOT balanced.\n";
+                return 0;
+            }
+        }
+    }
+    if(r.empty()){
+        cout<<"The bracket sequence is balanced.\n";
+    }
+    else{
+        cout<<"The bracket sequence is NOT balanced.\n";
+    }
+    return 0;
+}
+
+

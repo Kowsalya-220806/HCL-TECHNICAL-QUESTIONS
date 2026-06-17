@@ -1,0 +1,20 @@
+#include <iostream>
+#include<string>
+using namespace std;
+bool isvowel(char ch){
+    char i=tolower(ch);
+    return (i=='a'||i=='e'||i=='i'||i=='o'||i=='u');
+}
+int main()
+{
+    string s,result="";
+    cin>>s;
+    for (char ch:s){
+        if(!isvowel(ch)){
+            result+=ch;
+        }
+    }
+    cout<<result;
+    
+    return 0;
+}

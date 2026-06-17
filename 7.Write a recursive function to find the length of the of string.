@@ -1,0 +1,19 @@
+#include <iostream>
+#include<string>
+using namespace std;
+int getlength(const char* str){
+    if(*str=='\0'){
+        return 0;
+    }
+    return 1+getlength(str+1);
+    
+}
+int main()
+{
+    string s;
+    int l;
+    cin>>s;
+    l=getlength(s.c_str());
+    cout<<l;
+    return 0;
+}

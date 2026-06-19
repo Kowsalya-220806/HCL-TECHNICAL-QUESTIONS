@@ -1,0 +1,44 @@
+import java.util.*;
+class Book{
+    private static int totalbooks=0;
+    private String title;
+    
+    public Book(String title){
+        this.title=title;
+        totalbooks++;
+        System.out.println("Book Added: " + this.title);
+        System.out.println("Total Books: " + totalbooks + "\n");
+    }
+    public static void removebook(String title){
+        if (totalbooks > 0) {
+            totalbooks--;
+            System.out.println("Book Removed: " + title);
+            System.out.println("Total Books: " + totalbooks + "\n");
+        } else {
+            System.out.println("Library is already empty.\n");
+        }
+    }
+    
+}
+public class Main
+{   
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    System.out.print("Number of Books To Add : ");
+	    int BooksToAdd=sc.nextInt();
+	     sc.nextLine();
+	    for(int i=1;i<=BooksToAdd;i++){
+	        System.out.print("\nEnter book"+i+" title : ");
+	        String booktitle=sc.nextLine();
+	        Book b=new Book(booktitle);
+	    }
+	    System.out.print("Number of Books To Remove : ");
+	    int BooksToRemove=sc.nextInt();
+	    sc.nextLine();
+	    for(int i=1;i<=BooksToRemove;i++){
+	        System.out.print("\nEnter book"+i+" title : ");
+	        String booktitle=sc.nextLine();
+	        Book.removebook(booktitle);
+	    }
+	}
+}
